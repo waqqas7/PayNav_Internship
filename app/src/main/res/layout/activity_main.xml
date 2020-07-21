@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <RelativeLayout
+        android:id="@+id/godfather"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -72,7 +73,7 @@
             android:layout_height="150dp"
             app:cardCornerRadius="15dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="85dp"
             android:background="@android:color/white"
             android:elevation="10dp">
 
@@ -87,7 +88,7 @@
         <LinearLayout
             android:id="@+id/SliderDots"
             android:layout_below="@+id/Card"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="3dp"
             android:orientation="horizontal"
             android:layout_centerHorizontal="true"
             android:gravity="center_vertical|center_horizontal"
@@ -99,7 +100,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="250dp"
+            android:layout_marginTop="260dp"
             android:background="@drawable/layout_bg_white">
 
             <TextView
@@ -303,7 +304,7 @@
                 android:elevation="10dp"
                 android:background="@drawable/layout_bg_white"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="15dp">
+                android:layout_marginTop="10dp">
 
                 <ImageView
                     android:id="@+id/purple_box"
@@ -343,14 +344,14 @@
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@+id/bill_layout"
-                android:layout_marginTop="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="9dp"
                 android:src="@drawable/ic_baseline_add_24"
                 android:clickable="true"
                 android:scaleType="fitCenter"
                 android:focusable="true"
                 app:backgroundTint="@android:color/white"
-                app:elevation="12dp"
+                app:elevation="15dp"
                 app:fabSize="normal"
                 app:fabCustomSize="55dp"
                 app:pressedTranslationZ="25dp" />
@@ -358,8 +359,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
-                android:layout_below="@+id/bill_layout">
+                android:layout_alignParentBottom="true">
 
                 <ImageButton
                     android:id="@+id/home_button"
@@ -404,8 +404,6 @@
                     android:textColor="#6699CC"
                     android:layout_marginStart="6dp"
                     android:textSize="10sp"/>
-
-
 
                 <ImageButton
                     android:id="@+id/requests_button"
@@ -455,5 +453,11 @@
         </RelativeLayout>
 
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/contain_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"/>
 
 </RelativeLayout>

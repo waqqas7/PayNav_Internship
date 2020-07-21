@@ -4,6 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.Manifest;
@@ -99,6 +103,11 @@ public class MainActivity extends AppCompatActivity
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new MyTimerTask(), 3000, 5000);
 
+        ClickListeners();
+    }
+
+    private void ClickListeners()
+    {
         barScanner.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
@@ -126,34 +135,58 @@ public class MainActivity extends AppCompatActivity
         harsh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent harshIntent = new Intent(MainActivity.this, PaymentActivity.class);
-                harshIntent.putExtra("details", "Amount of 4200 is to be paid to Harshada Nikam");
-                startActivity(harshIntent);
+                PaymentFragment paymentFragment = new PaymentFragment();
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                Bundle b = new Bundle();
+                b.putString("details", "Amount of 4200 is to be paid to Harshada Nikam");
+                paymentFragment.setArguments(b);
+                fragmentTransaction.replace(R.id.contain_layout, paymentFragment);
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
 
         hearty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent heartyIntent = new Intent(MainActivity.this, PaymentActivity.class);
-                heartyIntent.putExtra("details", "Amount of 200 is to be paid to Hearty the Hero");
-                startActivity(heartyIntent);
+                PaymentFragment paymentFragment = new PaymentFragment();
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                Bundle b = new Bundle();
+                b.putString("details", "Amount of 200 is to be paid to Hearty the Hero");
+                paymentFragment.setArguments(b);
+                fragmentTransaction.replace(R.id.contain_layout, paymentFragment);
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
 
         transaction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent transIntent = new Intent(MainActivity.this, MakeTransactionActivity.class);
-                startActivity(transIntent);
+                MakeTransactionFragment makeTransactionFragment = new MakeTransactionFragment();
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.contain_layout, makeTransactionFragment);
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
 
         split.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent splitIntent = new Intent(MainActivity.this, SplitBillActivity.class);
-                startActivity(splitIntent);
+                SplitBillFragment splitBillFragment = new SplitBillFragment();
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.contain_layout, splitBillFragment);
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
 
@@ -167,34 +200,61 @@ public class MainActivity extends AppCompatActivity
         dues.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent duesIntent = new Intent(MainActivity.this, DuesActivity.class);
-                startActivity(duesIntent);
+                DuesFragment duesFragment = new DuesFragment();
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.contain_layout, duesFragment);
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent addIntent = new Intent(MainActivity.this, AddActivity.class);
-                startActivity(addIntent);
+                AddFragment addFragment = new AddFragment();
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.contain_layout, addFragment);
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
 
         requests.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent requestIntent = new Intent(MainActivity.this, RequestsActivity.class);
-                startActivity(requestIntent);
+                RequestsFragment requestsFragment = new RequestsFragment();
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.contain_layout, requestsFragment);
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
 
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent profIntent = new Intent(MainActivity.this, ProfileActivity.class);
-                startActivity(profIntent);
+                ProfileFragment profileFragment = new ProfileFragment();
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.contain_layout, profileFragment);
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        findViewById(R.id.godfather).setVisibility(View.VISIBLE);
     }
 
     @Override
