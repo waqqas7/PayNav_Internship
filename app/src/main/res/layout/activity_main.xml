@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/offWhite"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/layout_bg_blue">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PayNav"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <ImageView
+            android:id="@+id/bar_scanner"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="13dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="60dp"
+            android:src="@drawable/scanner"/>
+
+        <ImageView
+            android:id="@+id/notifications"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8.5dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/notifications_icon"/>
+
+        <ImageView
+            android:id="@+id/red_circle"
+            android:layout_width="7dp"
+            android:layout_height="7dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="27.5dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/Card"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="42dp"
+            android:layout_marginBottom="-75dp"
+            android:text="Hello, Vivek!"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Card"
+            android:layout_width="285dp"
+            android:layout_height="150dp"
+            app:cardCornerRadius="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:background="@android:color/white"
+            android:elevation="10dp">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="285dp"
+                android:layout_height="150dp"
+                android:layout_marginBottom="8dp"/>
+
+        </androidx.cardview.widget.CardView>
+        
+        <LinearLayout
+            android:id="@+id/SliderDots"
+            android:layout_below="@+id/Card"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_height="10dp"
+            android:layout_width="180dp">
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="250dp"
+            android:background="@drawable/layout_bg_white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PayBack"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="12dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+            <RelativeLayout
+                android:id="@+id/harshada_layout"
+                android:layout_width="320dp"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:elevation="10dp"
+                android:background="@drawable/layout_bg_white"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp">
+
+                <ImageView
+                    android:id="@+id/green_box"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/layout_bg_green"/>
+
+                <TextView
+                    android:id="@+id/harshada"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Harshada Nikam"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@+id/green_box"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/green_box"
+                    android:layout_below="@+id/harshada"
+                    android:layout_marginStart="5dp"
+                    android:text="Due Date: 12-July-2020"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/pay_green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:text="Pay"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="17sp"
+                    android:layout_below="@+id/pay_green"
+                    android:text="4200"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/hearty_layout"
+                android:layout_width="320dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/harshada_layout"
+                android:orientation="horizontal"
+                android:elevation="10dp"
+                android:background="@drawable/layout_bg_white"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/pink_box"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/layout_bg_pink"/>
+
+                <TextView
+                    android:id="@+id/hearty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hearty the Hero"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@+id/pink_box"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/pink_box"
+                    android:layout_below="@+id/hearty"
+                    android:layout_marginStart="5dp"
+                    android:text="Due Date: 12-July-2020"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/pay_pink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:text="Pay"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="22sp"
+                    android:layout_below="@+id/pay_pink"
+                    android:text="200"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="185dp"
+                android:layout_marginEnd="20dp"
+                android:text="View all  >"
+                android:textSize="13sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"/>
+
+            <RelativeLayout
+                android:id="@+id/transaction_layout"
+                android:layout_width="320dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/hearty_layout"
+                android:orientation="horizontal"
+                android:elevation="10dp"
+                android:background="@drawable/layout_bg_white"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="37dp">
+
+                <ImageView
+                    android:id="@+id/yellow_box"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/coins"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/layout_bg_yellow"/>
+
+                <TextView
+                    android:id="@+id/make_transaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Make your first transaction"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@+id/yellow_box"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/yellow_box"
+                    android:layout_below="@+id/make_transaction"
+                    android:layout_marginStart="5dp"
+                    android:text="We are here to take care of the rest"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bill_layout"
+                android:layout_width="320dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/transaction_layout"
+                android:orientation="horizontal"
+                android:elevation="10dp"
+                android:background="@drawable/layout_bg_white"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp">
+
+                <ImageView
+                    android:id="@+id/purple_box"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/bill_split"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/layout_bg_purple"/>
+
+                <TextView
+                    android:id="@+id/split_bill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Split the bill responsibly"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@+id/purple_box"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/purple_box"
+                    android:layout_below="@+id/split_bill"
+                    android:layout_marginStart="5dp"
+                    android:text="Don't worry! We'll do the math for you"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/add_button"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/bill_layout"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/ic_baseline_add_24"
+                android:clickable="true"
+                android:scaleType="fitCenter"
+                android:focusable="true"
+                app:backgroundTint="@android:color/white"
+                app:elevation="12dp"
+                app:fabSize="normal"
+                app:fabCustomSize="55dp"
+                app:pressedTranslationZ="25dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_below="@+id/bill_layout">
+
+                <ImageButton
+                    android:id="@+id/home_button"
+                    android:background="@drawable/layout_bg_white"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="15dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_outline_home_24"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Home"
+                    android:layout_below="@+id/home_button"
+                    android:layout_alignStart="@+id/home_button"
+                    android:textAllCaps="false"
+                    android:textColor="#6699CC"
+                    android:layout_marginStart="7dp"
+                    android:textSize="10sp"/>
+
+                <ImageButton
+                    android:id="@+id/dues_button"
+                    android:background="@android:color/white"
+                    android:layout_toEndOf="@+id/home_button"
+                    android:layout_width="35dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginStart="30dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_outline_calendar_today_24"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dues"
+                    android:layout_below="@+id/dues_button"
+                    android:layout_alignStart="@+id/dues_button"
+                    android:layout_marginTop="2.5dp"
+                    android:textAllCaps="false"
+                    android:textColor="#6699CC"
+                    android:layout_marginStart="6dp"
+                    android:textSize="10sp"/>
+
+
+
+                <ImageButton
+                    android:id="@+id/requests_button"
+                    android:background="@android:color/white"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_toStartOf="@+id/profile_button"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_outline_question_answer_24"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Requests"
+                    android:layout_below="@+id/requests_button"
+                    android:layout_alignStart="@+id/requests_button"
+                    android:textAllCaps="false"
+                    android:textColor="#6699CC"
+                    android:layout_marginTop="-1.5dp"
+                    android:textSize="10sp"/>
+
+                <ImageButton
+                    android:id="@+id/profile_button"
+                    android:background="@drawable/layout_bg_white"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_outline_person_outline_24"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profile"
+                    android:layout_below="@+id/profile_button"
+                    android:layout_alignStart="@+id/profile_button"
+                    android:textAllCaps="false"
+                    android:textColor="#6699CC"
+                    android:layout_marginTop="-1.5dp"
+                    android:layout_marginStart="6dp"
+                    android:textSize="10sp"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
