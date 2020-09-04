@@ -10,10 +10,6 @@ import android.widget.Toast;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-/**
- * Created by Sanket on 27-Feb-17.
- */
-
 public class ViewPagerAdapter extends PagerAdapter {
 
     private Context context;

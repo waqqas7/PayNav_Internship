@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".SplitBillFragment">
 
     <ImageView
+        android:id="@+id/one"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="25dp"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/divider"
         android:src="@drawable/ic_outline_person_outline_24"
         android:scaleType="centerCrop"
         android:background="@drawable/layout_bg_white"/>
@@ -20,21 +22,22 @@
         android:id="@+id/divider"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="10dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/one"
+        app:layout_constraintEnd_toStartOf="@+id/two"
         android:src="@drawable/bill_split"
         android:scaleType="centerCrop"
         android:background="@drawable/layout_bg_purple"/>
 
     <ImageView
+        android:id="@+id/two"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="5dp"
-        android:layout_centerVertical="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="25dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/ic_outline_person_outline_24"
         android:scaleType="centerCrop"
         android:background="@drawable/layout_bg_white"/>
@@ -42,13 +45,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textAlignment="center"
-        android:layout_marginTop="25dp"
-        android:layout_below="@+id/divider"
-        android:layout_centerHorizontal="true"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        app:layout_constraintStart_toEndOf="@+id/one"
+        app:layout_constraintEnd_toStartOf="@+id/two"
+        android:layout_marginTop="10dp"
         android:text="Split the Bill"
         android:textColor="@android:color/white"
         android:textStyle="bold"/>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

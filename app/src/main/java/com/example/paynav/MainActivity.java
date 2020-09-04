@@ -3,6 +3,7 @@ package com.example.paynav;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -18,6 +19,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -28,6 +30,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Timer;
@@ -40,7 +43,7 @@ public class MainActivity extends AppCompatActivity
     private int dotsCount;
     private ImageView[] dots;
     private ImageView notifyIcon, redDot, barScanner;
-    private RelativeLayout harsh, hearty, transaction, split;
+    private ConstraintLayout harsh, hearty, transaction, split;
     private ImageButton home, dues, requests, profile;
     private FloatingActionButton add;
 
@@ -48,9 +51,6 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
         InitializeFields();
@@ -282,10 +282,10 @@ public class MainActivity extends AppCompatActivity
         redDot = (ImageView) findViewById(R.id.red_circle);
         barScanner = (ImageView) findViewById(R.id.bar_scanner);
         notifyIcon = (ImageView) findViewById(R.id.notifications);
-        harsh = (RelativeLayout) findViewById(R.id.harshada_layout);
-        hearty = (RelativeLayout) findViewById(R.id.hearty_layout);
-        transaction = (RelativeLayout) findViewById(R.id.transaction_layout);
-        split = (RelativeLayout) findViewById(R.id.bill_layout);
+        harsh = (ConstraintLayout) findViewById(R.id.harshada_layout);
+        hearty = (ConstraintLayout) findViewById(R.id.hearty_layout);
+        transaction = (ConstraintLayout) findViewById(R.id.transaction_layout);
+        split = (ConstraintLayout) findViewById(R.id.bill_layout);
         home = (ImageButton) findViewById(R.id.home_button);
         dues = (ImageButton) findViewById(R.id.dues_button);
         requests = (ImageButton) findViewById(R.id.requests_button);
